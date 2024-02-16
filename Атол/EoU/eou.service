@@ -1,0 +1,12 @@
+[Unit]
+Description=ATOL Ethernet over USB service
+After=display-manager.service
+
+[Service]
+Type=forking
+User=root
+ExecStart=/opt/EoU/EthOverUsb.sh
+ExecStop=/opt/EoU/EthOverUsb.sh -t
+
+[Install]
+WantedBy=multi-user.target

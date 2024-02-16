@@ -1,0 +1,10 @@
+#!/bin/bash
+
+sudo rm -rf /etc/ATOL/
+sudo systemctl stop eou.service
+sudo systemctl disable eou.service
+sudo rm -f /etc/systemd/system/eou.service
+sudo /opt/EoU/EthOverUsb.sh -u
+sudo rm -rf /opt/EoU/
+
+exit

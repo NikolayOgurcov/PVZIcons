@@ -1,0 +1,14 @@
+#!/bin/bash
+
+sudo mkdir -p /etc/ATOL/EoU
+sudo cp EoU/settings.xml /etc/ATOL/EoU/
+sudo mkdir -p /opt/EoU
+sudo cp EoU/* /opt/EoU/
+#sudo rm -f /opt/EoU/settings.xml
+sudo rm -f /opt/EoU/eou.service
+sudo chmod +x /opt/EoU/EthOverUsb*
+sudo /opt/EoU/EthOverUsb.sh -i
+sudo cp EoU/eou.service /etc/systemd/system/
+sudo systemctl enable --now /etc/systemd/system/eou.service
+
+exit
